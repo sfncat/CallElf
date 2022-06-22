@@ -17,6 +17,7 @@ android {
     sourceSets{
         main{
             assets.srcDirs 'build/intermediates/ndkBuild/debug/obj/local'
+            assets.srcDirs 'src/main/nativeBin'
         }
     }
     aaptOptions {

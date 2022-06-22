@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textview1;
     int c=0;
     copyElfs ce;
+    EditText editText;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         textview1=(TextView)findViewById(R.id.textView1);
         ce = new copyElfs(getBaseContext());
         ce.copyAll2Data();
-
+        editText = (EditText) findViewById(R.id.etPara);
     }
     public String callElf(String cmd){
         Process p;
@@ -48,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
         return execresult;
     }
     public void bt1_click(View view){
+        String inputText = editText.getText().toString();
+        Log.e(Tag,inputText);
         c = c+1;
-        textview1.setText("click:"+c+"\n"+callElf("hello"));
+        textview1.setText("click:"+c+"\n"+callElf("hello " + inputText));
     }
 }

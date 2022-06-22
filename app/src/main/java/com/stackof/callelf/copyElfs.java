@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class copyElfs {
-    String tag="StackOF:";
+    String tag="StackOF";
     Context ct;
     String appFileDirectory, executableFilePath;
     AssetManager assetManager;
